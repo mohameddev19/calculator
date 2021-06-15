@@ -1,0 +1,649 @@
+<!DOCTYPE >
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>home</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="icon" href="">
+</head>
+
+<body>
+    <div class="head row">
+        <h2>حاسبة تكليف</h2>
+        <h6>اخر تحديث بتاريخ 2020/7/1</h6>
+    </div>
+    <div class="row align-items-center">
+        <div id="n1" class="num col-12 col-md-6 col-lg-4"><div class="numb"><label>قبو</label><input id="in1" type="text" placeholder="0.00"></div></div>
+        <div id="n2" class="num col-12 col-md-6 col-lg-4"><div class="numb"><label>أرضي</label><input id="in2" type="text" placeholder="0.00"></div></div>
+        <div id="n3" class="num col-12 col-md-6 col-lg-4"><div class="numb"><label>متكرر أول</label><input id="in3" type="text" placeholder="0.00"></div></div>
+        <div id="n4" class="num col-12 col-md-6 col-lg-4"><div class="numb"><label>متكرر ثاني</label><input id="in4" type="text" placeholder="0.00"></div></div>
+        <div id="n5" class="num col-12 col-md-6 col-lg-4"><div class="numb"><label>ملحق علوي</label><input id="in5" type="text" placeholder="0.00"></div></div>
+        <div id="n6" class="num col-12 col-md-6 col-lg-4"><div class="numb"><label>المصعد + بيت الدرج</label><input id="in6" type="text" placeholder="0.00"></div></div>
+        <div id="n7" class="num col-12 col-md-6 col-lg-4"><div class="numb"><label>ملحق أرضي</label><input id="in7" type="text" placeholder="0.00"></div></div>
+        <hr>
+        <div id="n8" class="num col-6 col-md-6"><div class="numb"><label>طول المسبح</label><input id="in8" type="text" placeholder="0.00"></div></div>
+        <div id="n9" class="num col-6 col-md-6"><div class="numb"><label>عرض المسبح</label><input id="in9" type="text" placeholder="0.00"></div></div>
+        <div id="n10" class="num col-12 col-md-6"><div class="numb"><label>طول الخزان</label><input id="in10" type="text" placeholder="0.00"></div></div>
+        <div id="n11" class="num col-12 col-md-6"><div class="numb"><label>عرض الخزان</label><input id="in11" type="text" placeholder="0.00"></div></div>
+        <div id="n12" class="num col-12 col-md-6"><div class="numb"><label>طول البيارة</label><input id="in12" type="text" placeholder="0.00"></div></div>
+        <div id="n13" class="num col-12 col-md-6"><div class="numb"><label>عرض البيارة</label><input id="in13" type="text" placeholder="0.00"></div></div>
+        <div id="n14" class="num col-12 col-md-6"><div class="numb"><label>طول بيارة البدروم</label><input id="in14" type="text" placeholder="0.00"></div></div>
+        <div id="n15" class="num col-12 col-md-6"><div class="numb"><label>عرض بيارة البدروم</label><input id="in15" type="text" placeholder="0.00"></div></div>
+        <hr>
+        <div id="n16" class="num col-12 col-md-6 col-lg-4"><div class="numb"><label>السترة العلوية</label><input id="in16" type="text" placeholder="0.00"></div></div>
+        <div id="n17" class="num col-12 col-md-6 col-lg-4"><div class="numb"><label>طول السور الخارجي</label><input id="in17" type="text" placeholder="0.00"></div></div>
+        <div id="n18" class="num col-12 col-md-6 col-lg-4"><div class="numb"><label>السور السفلي</label><input id="in18" type="text" placeholder="0.00"></div></div>
+        <div id="n19" class="num col-12 col-md-6 col-lg-4"><div class="numb nb2"><label>التكلفة التقديريةللإنشاءات</label><input id="in19" type="text" placeholder="0.00" maxlength="0"></div></div>
+        <div id="n20" class="num col-12 col-md-6 col-lg-4"><div class="numb nb2"><label>التكلفة التقديرية للتسليم</label><input id="in20" type="text" placeholder="0.00" maxlength="0"></div></div>
+    </div>
+
+    <script>
+        const n1 = document.getElementById("n1");
+        const n2 = document.getElementById("n2");
+        const n3 = document.getElementById("n3");
+        const n4 = document.getElementById("n4");
+        const n5 = document.getElementById("n5");
+        const n6 = document.getElementById("n6");
+        const n7 = document.getElementById("n7");
+        const n8 = document.getElementById("n8");
+        const n9 = document.getElementById("n9");
+        const n10 = document.getElementById("n10");
+        const n11 = document.getElementById("n11");
+        const n12 = document.getElementById("n12");
+        const n13 = document.getElementById("n13");
+        const n14 = document.getElementById("n14");
+        const n15 = document.getElementById("n15");
+        const n16 = document.getElementById("n16");
+        const n17 = document.getElementById("n17");
+        const n18 = document.getElementById("n18");
+        const n19 = document.getElementById("n19");
+        const n20 = document.getElementById("n20");
+        const in1 = document.getElementById("in1");
+        const in2 = document.getElementById("in2");
+        const in3 = document.getElementById("in3");
+        const in4 = document.getElementById("in4");
+        const in5 = document.getElementById("in5");
+        const in6 = document.getElementById("in6");
+        const in7 = document.getElementById("in7");
+        const in8 = document.getElementById("in8");
+        const in9 = document.getElementById("in9");
+        const in10 = document.getElementById("in10");
+        const in11 = document.getElementById("in11");
+        const in12 = document.getElementById("in12");
+        const in13 = document.getElementById("in13");
+        const in14 = document.getElementById("in14");
+        const in15 = document.getElementById("in15");
+        const in16 = document.getElementById("in16");
+        const in17 = document.getElementById("in17");
+        const in18 = document.getElementById("in18");
+        const in19 = document.getElementById("in19");
+        const in20 = document.getElementById("in20");
+        let nn1 = 0;
+        let nn2 = 0;
+        let nn3 = 0;
+        let nn4 = 0;
+        let nn5 = 0;
+        let nn6 = 0;
+        let nn7 = 0;
+        let nn8 = 0;
+        let nn9 = 0;
+        let nn10 = 0;
+        let nn11 = 0;
+        let nn12 = 0;
+        let nn13 = 0;
+        let nn14 = 0;
+        let nn15 = 0;
+        let nn16 = 0;
+        let nn17 = 0;
+        let nn18 = 0;
+        let nn19 = 0;
+        let nn20 = 0;
+        n1.onkeyup = function(){
+            let nn1 = in1.value;
+            let nn2 = in2.value;
+            let nn3 = in3.value;
+            let nn4 = in4.value;
+            let nn5 = in5.value;
+            let nn6 = in6.value;
+            let nn7 = in7.value;
+            let nn8 = in8.value;
+            let nn9 = in9.value;
+            let nn10 = in10.value;
+            let nn11 = in11.value;
+            let nn12 = in12.value;
+            let nn13 = in13.value;
+            let nn14 = in14.value;
+            let nn15 = in15.value;
+            let nn16 = in16.value;
+            let nn17 = in17.value;
+            let nn18 = in18.value;
+            nn19 =(nn1 * 900) + (nn2 * 450) + (nn3 * 450) + (nn4 * 450) + (nn5 * 450) + (nn6 * 450) + (nn7 * 450) + ((nn8 * nn9) * 900) + ((nn10 * nn11) * 900) + ((nn12 * nn13) * 450) + ((nn14 * nn15) * 900) + (nn16 * 200) + (nn17 * 400) + (nn18 * 450);
+            nn20 = (nn1 * 1700) + (nn2 * 1300) + (nn3 * 1300) + (nn4 * 1300) + (nn5 * 1300) + (nn6 * 1300) + (nn7 * 1300) + ((nn8 * nn9) * 1700) + ((nn10 * nn11) * 1100) + ((nn12 * nn13) * 0) + ((nn14 * nn15) * 0) + (nn16 * 400) + (nn17 * 700) + (nn18 * 0);
+            if(nn19 > 1){
+                in19.value = nn19;
+                in20.value = Math.round(nn20);
+            }
+            else{
+                in19.value = '';
+                in20.value = '';
+            }
+        }
+        n2.onkeyup = function(){
+            let nn1 = in1.value;
+            let nn2 = in2.value;
+            let nn3 = in3.value;
+            let nn4 = in4.value;
+            let nn5 = in5.value;
+            let nn6 = in6.value;
+            let nn7 = in7.value;
+            let nn8 = in8.value;
+            let nn9 = in9.value;
+            let nn10 = in10.value;
+            let nn11 = in11.value;
+            let nn12 = in12.value;
+            let nn13 = in13.value;
+            let nn14 = in14.value;
+            let nn15 = in15.value;
+            let nn16 = in16.value;
+            let nn17 = in17.value;
+            let nn18 = in18.value;
+            nn19 =(nn1 * 900) + (nn2 * 450) + (nn3 * 450) + (nn4 * 450) + (nn5 * 450) + (nn6 * 450) + (nn7 * 450) + ((nn8 * nn9) * 900) + ((nn10 * nn11) * 900) + ((nn12 * nn13) * 450) + ((nn14 * nn15) * 900) + (nn16 * 200) + (nn17 * 400) + (nn18 * 450);
+            nn20 = (nn1 * 1700) + (nn2 * 1300) + (nn3 * 1300) + (nn4 * 1300) + (nn5 * 1300) + (nn6 * 1300) + (nn7 * 1300) + ((nn8 * nn9) * 1700) + ((nn10 * nn11) * 1100) + ((nn12 * nn13) * 0) + ((nn14 * nn15) * 0) + (nn16 * 400) + (nn17 * 700) + (nn18 * 0);
+            if(nn19 > 1){
+                in19.value = nn19;
+                in20.value = Math.round(nn20);
+            }
+            else{
+                in19.value = '';
+                in20.value = '';
+            }
+        }
+        n3.onkeyup = function(){
+            let nn1 = in1.value;
+            let nn2 = in2.value;
+            let nn3 = in3.value;
+            let nn4 = in4.value;
+            let nn5 = in5.value;
+            let nn6 = in6.value;
+            let nn7 = in7.value;
+            let nn8 = in8.value;
+            let nn9 = in9.value;
+            let nn10 = in10.value;
+            let nn11 = in11.value;
+            let nn12 = in12.value;
+            let nn13 = in13.value;
+            let nn14 = in14.value;
+            let nn15 = in15.value;
+            let nn16 = in16.value;
+            let nn17 = in17.value;
+            let nn18 = in18.value;
+            nn19 =(nn1 * 900) + (nn2 * 450) + (nn3 * 450) + (nn4 * 450) + (nn5 * 450) + (nn6 * 450) + (nn7 * 450) + ((nn8 * nn9) * 900) + ((nn10 * nn11) * 900) + ((nn12 * nn13) * 450) + ((nn14 * nn15) * 900) + (nn16 * 200) + (nn17 * 400) + (nn18 * 450);
+            nn20 = (nn1 * 1700) + (nn2 * 1300) + (nn3 * 1300) + (nn4 * 1300) + (nn5 * 1300) + (nn6 * 1300) + (nn7 * 1300) + ((nn8 * nn9) * 1700) + ((nn10 * nn11) * 1100) + ((nn12 * nn13) * 0) + ((nn14 * nn15) * 0) + (nn16 * 400) + (nn17 * 700) + (nn18 * 0);
+            if(nn19 > 1){
+                in19.value = nn19;
+                in20.value = Math.round(nn20);
+            }
+            else{
+                in19.value = '';
+                in20.value = '';
+            }
+        }
+        n4.onkeyup = function(){
+            let nn1 = in1.value;
+            let nn2 = in2.value;
+            let nn3 = in3.value;
+            let nn4 = in4.value;
+            let nn5 = in5.value;
+            let nn6 = in6.value;
+            let nn7 = in7.value;
+            let nn8 = in8.value;
+            let nn9 = in9.value;
+            let nn10 = in10.value;
+            let nn11 = in11.value;
+            let nn12 = in12.value;
+            let nn13 = in13.value;
+            let nn14 = in14.value;
+            let nn15 = in15.value;
+            let nn16 = in16.value;
+            let nn17 = in17.value;
+            let nn18 = in18.value;
+            nn19 =(nn1 * 900) + (nn2 * 450) + (nn3 * 450) + (nn4 * 450) + (nn5 * 450) + (nn6 * 450) + (nn7 * 450) + ((nn8 * nn9) * 900) + ((nn10 * nn11) * 900) + ((nn12 * nn13) * 450) + ((nn14 * nn15) * 900) + (nn16 * 200) + (nn17 * 400) + (nn18 * 450);
+            nn20 = (nn1 * 1700) + (nn2 * 1300) + (nn3 * 1300) + (nn4 * 1300) + (nn5 * 1300) + (nn6 * 1300) + (nn7 * 1300) + ((nn8 * nn9) * 1700) + ((nn10 * nn11) * 1100) + ((nn12 * nn13) * 0) + ((nn14 * nn15) * 0) + (nn16 * 400) + (nn17 * 700) + (nn18 * 0);
+            if(nn19 > 1){
+                in19.value = nn19;
+                in20.value = Math.round(nn20);
+            }
+            else{
+                in19.value = '';
+                in20.value = '';
+            }
+        }
+        n5.onkeyup = function(){
+            let nn1 = in1.value;
+            let nn2 = in2.value;
+            let nn3 = in3.value;
+            let nn4 = in4.value;
+            let nn5 = in5.value;
+            let nn6 = in6.value;
+            let nn7 = in7.value;
+            let nn8 = in8.value;
+            let nn9 = in9.value;
+            let nn10 = in10.value;
+            let nn11 = in11.value;
+            let nn12 = in12.value;
+            let nn13 = in13.value;
+            let nn14 = in14.value;
+            let nn15 = in15.value;
+            let nn16 = in16.value;
+            let nn17 = in17.value;
+            let nn18 = in18.value;
+            nn19 =(nn1 * 900) + (nn2 * 450) + (nn3 * 450) + (nn4 * 450) + (nn5 * 450) + (nn6 * 450) + (nn7 * 450) + ((nn8 * nn9) * 900) + ((nn10 * nn11) * 900) + ((nn12 * nn13) * 450) + ((nn14 * nn15) * 900) + (nn16 * 200) + (nn17 * 400) + (nn18 * 450);
+            nn20 = (nn1 * 1700) + (nn2 * 1300) + (nn3 * 1300) + (nn4 * 1300) + (nn5 * 1300) + (nn6 * 1300) + (nn7 * 1300) + ((nn8 * nn9) * 1700) + ((nn10 * nn11) * 1100) + ((nn12 * nn13) * 0) + ((nn14 * nn15) * 0) + (nn16 * 400) + (nn17 * 700) + (nn18 * 0);
+            if(nn19 > 1){
+                in19.value = nn19;
+                in20.value = Math.round(nn20);
+            }
+            else{
+                in19.value = '';
+                in20.value = '';
+            }
+        }
+        n6.onkeyup = function(){
+            let nn1 = in1.value;
+            let nn2 = in2.value;
+            let nn3 = in3.value;
+            let nn4 = in4.value;
+            let nn5 = in5.value;
+            let nn6 = in6.value;
+            let nn7 = in7.value;
+            let nn8 = in8.value;
+            let nn9 = in9.value;
+            let nn10 = in10.value;
+            let nn11 = in11.value;
+            let nn12 = in12.value;
+            let nn13 = in13.value;
+            let nn14 = in14.value;
+            let nn15 = in15.value;
+            let nn16 = in16.value;
+            let nn17 = in17.value;
+            let nn18 = in18.value;
+            nn19 =(nn1 * 900) + (nn2 * 450) + (nn3 * 450) + (nn4 * 450) + (nn5 * 450) + (nn6 * 450) + (nn7 * 450) + ((nn8 * nn9) * 900) + ((nn10 * nn11) * 900) + ((nn12 * nn13) * 450) + ((nn14 * nn15) * 900) + (nn16 * 200) + (nn17 * 400) + (nn18 * 450);
+            nn20 = (nn1 * 1700) + (nn2 * 1300) + (nn3 * 1300) + (nn4 * 1300) + (nn5 * 1300) + (nn6 * 1300) + (nn7 * 1300) + ((nn8 * nn9) * 1700) + ((nn10 * nn11) * 1100) + ((nn12 * nn13) * 0) + ((nn14 * nn15) * 0) + (nn16 * 400) + (nn17 * 700) + (nn18 * 0);
+            if(nn19 > 1){
+                in19.value = nn19;
+                in20.value = Math.round(nn20);
+            }
+            else{
+                in19.value = '';
+                in20.value = '';
+            }
+        }
+        n7.onkeyup = function(){
+            let nn1 = in1.value;
+            let nn2 = in2.value;
+            let nn3 = in3.value;
+            let nn4 = in4.value;
+            let nn5 = in5.value;
+            let nn6 = in6.value;
+            let nn7 = in7.value;
+            let nn8 = in8.value;
+            let nn9 = in9.value;
+            let nn10 = in10.value;
+            let nn11 = in11.value;
+            let nn12 = in12.value;
+            let nn13 = in13.value;
+            let nn14 = in14.value;
+            let nn15 = in15.value;
+            let nn16 = in16.value;
+            let nn17 = in17.value;
+            let nn18 = in18.value;
+            nn19 =(nn1 * 900) + (nn2 * 450) + (nn3 * 450) + (nn4 * 450) + (nn5 * 450) + (nn6 * 450) + (nn7 * 450) + ((nn8 * nn9) * 900) + ((nn10 * nn11) * 900) + ((nn12 * nn13) * 450) + ((nn14 * nn15) * 900) + (nn16 * 200) + (nn17 * 400) + (nn18 * 450);
+            nn20 = (nn1 * 1700) + (nn2 * 1300) + (nn3 * 1300) + (nn4 * 1300) + (nn5 * 1300) + (nn6 * 1300) + (nn7 * 1300) + ((nn8 * nn9) * 1700) + ((nn10 * nn11) * 1100) + ((nn12 * nn13) * 0) + ((nn14 * nn15) * 0) + (nn16 * 400) + (nn17 * 700) + (nn18 * 0);
+            if(nn19 > 1){
+                in19.value = nn19;
+                in20.value = Math.round(nn20);
+            }
+            else{
+                in19.value = '';
+                in20.value = '';
+            }
+        }
+        n8.onkeyup = function(){
+            let nn1 = in1.value;
+            let nn2 = in2.value;
+            let nn3 = in3.value;
+            let nn4 = in4.value;
+            let nn5 = in5.value;
+            let nn6 = in6.value;
+            let nn7 = in7.value;
+            let nn8 = in8.value;
+            let nn9 = in9.value;
+            let nn10 = in10.value;
+            let nn11 = in11.value;
+            let nn12 = in12.value;
+            let nn13 = in13.value;
+            let nn14 = in14.value;
+            let nn15 = in15.value;
+            let nn16 = in16.value;
+            let nn17 = in17.value;
+            let nn18 = in18.value;
+            nn19 =(nn1 * 900) + (nn2 * 450) + (nn3 * 450) + (nn4 * 450) + (nn5 * 450) + (nn6 * 450) + (nn7 * 450) + ((nn8 * nn9) * 900) + ((nn10 * nn11) * 900) + ((nn12 * nn13) * 450) + ((nn14 * nn15) * 900) + (nn16 * 200) + (nn17 * 400) + (nn18 * 450);
+            nn20 = (nn1 * 1700) + (nn2 * 1300) + (nn3 * 1300) + (nn4 * 1300) + (nn5 * 1300) + (nn6 * 1300) + (nn7 * 1300) + ((nn8 * nn9) * 1700) + ((nn10 * nn11) * 1100) + ((nn12 * nn13) * 0) + ((nn14 * nn15) * 0) + (nn16 * 400) + (nn17 * 700) + (nn18 * 0);
+            if(nn19 > 1){
+                in19.value = nn19;
+                in20.value = Math.round(nn20);
+            }
+            else{
+                in19.value = '';
+                in20.value = '';
+            }
+        }
+        n9.onkeyup = function(){
+            let nn1 = in1.value;
+            let nn2 = in2.value;
+            let nn3 = in3.value;
+            let nn4 = in4.value;
+            let nn5 = in5.value;
+            let nn6 = in6.value;
+            let nn7 = in7.value;
+            let nn8 = in8.value;
+            let nn9 = in9.value;
+            let nn10 = in10.value;
+            let nn11 = in11.value;
+            let nn12 = in12.value;
+            let nn13 = in13.value;
+            let nn14 = in14.value;
+            let nn15 = in15.value;
+            let nn16 = in16.value;
+            let nn17 = in17.value;
+            let nn18 = in18.value;
+            nn19 =(nn1 * 900) + (nn2 * 450) + (nn3 * 450) + (nn4 * 450) + (nn5 * 450) + (nn6 * 450) + (nn7 * 450) + ((nn8 * nn9) * 900) + ((nn10 * nn11) * 900) + ((nn12 * nn13) * 450) + ((nn14 * nn15) * 900) + (nn16 * 200) + (nn17 * 400) + (nn18 * 450);
+            nn20 = (nn1 * 1700) + (nn2 * 1300) + (nn3 * 1300) + (nn4 * 1300) + (nn5 * 1300) + (nn6 * 1300) + (nn7 * 1300) + ((nn8 * nn9) * 1700) + ((nn10 * nn11) * 1100) + ((nn12 * nn13) * 0) + ((nn14 * nn15) * 0) + (nn16 * 400) + (nn17 * 700) + (nn18 * 0);
+            if(nn19 > 1){
+                in19.value = nn19;
+                in20.value = Math.round(nn20);
+            }
+            else{
+                in19.value = '';
+                in20.value = '';
+            }
+        }
+        n10.onkeyup = function(){
+            let nn1 = in1.value;
+            let nn2 = in2.value;
+            let nn3 = in3.value;
+            let nn4 = in4.value;
+            let nn5 = in5.value;
+            let nn6 = in6.value;
+            let nn7 = in7.value;
+            let nn8 = in8.value;
+            let nn9 = in9.value;
+            let nn10 = in10.value;
+            let nn11 = in11.value;
+            let nn12 = in12.value;
+            let nn13 = in13.value;
+            let nn14 = in14.value;
+            let nn15 = in15.value;
+            let nn16 = in16.value;
+            let nn17 = in17.value;
+            let nn18 = in18.value;
+            nn19 =(nn1 * 900) + (nn2 * 450) + (nn3 * 450) + (nn4 * 450) + (nn5 * 450) + (nn6 * 450) + (nn7 * 450) + ((nn8 * nn9) * 900) + ((nn10 * nn11) * 900) + ((nn12 * nn13) * 450) + ((nn14 * nn15) * 900) + (nn16 * 200) + (nn17 * 400) + (nn18 * 450);
+            nn20 = (nn1 * 1700) + (nn2 * 1300) + (nn3 * 1300) + (nn4 * 1300) + (nn5 * 1300) + (nn6 * 1300) + (nn7 * 1300) + ((nn8 * nn9) * 1700) + ((nn10 * nn11) * 1100) + ((nn12 * nn13) * 0) + ((nn14 * nn15) * 0) + (nn16 * 400) + (nn17 * 700) + (nn18 * 0);
+            if(nn19 > 1){
+                in19.value = nn19;
+                in20.value = Math.round(nn20);
+            }
+            else{
+                in19.value = '';
+                in20.value = '';
+            }
+        }
+        n11.onkeyup = function(){
+            let nn1 = in1.value;
+            let nn2 = in2.value;
+            let nn3 = in3.value;
+            let nn4 = in4.value;
+            let nn5 = in5.value;
+            let nn6 = in6.value;
+            let nn7 = in7.value;
+            let nn8 = in8.value;
+            let nn9 = in9.value;
+            let nn10 = in10.value;
+            let nn11 = in11.value;
+            let nn12 = in12.value;
+            let nn13 = in13.value;
+            let nn14 = in14.value;
+            let nn15 = in15.value;
+            let nn16 = in16.value;
+            let nn17 = in17.value;
+            let nn18 = in18.value;
+            nn19 =(nn1 * 900) + (nn2 * 450) + (nn3 * 450) + (nn4 * 450) + (nn5 * 450) + (nn6 * 450) + (nn7 * 450) + ((nn8 * nn9) * 900) + ((nn10 * nn11) * 900) + ((nn12 * nn13) * 450) + ((nn14 * nn15) * 900) + (nn16 * 200) + (nn17 * 400) + (nn18 * 450);
+            nn20 = (nn1 * 1700) + (nn2 * 1300) + (nn3 * 1300) + (nn4 * 1300) + (nn5 * 1300) + (nn6 * 1300) + (nn7 * 1300) + ((nn8 * nn9) * 1700) + ((nn10 * nn11) * 1100) + ((nn12 * nn13) * 0) + ((nn14 * nn15) * 0) + (nn16 * 400) + (nn17 * 700) + (nn18 * 0);
+            if(nn19 > 1){
+                in19.value = nn19;
+                in20.value = Math.round(nn20);
+            }
+            else{
+                in19.value = '';
+                in20.value = '';
+            }
+        }
+        n12.onkeyup = function(){
+            let nn1 = in1.value;
+            let nn2 = in2.value;
+            let nn3 = in3.value;
+            let nn4 = in4.value;
+            let nn5 = in5.value;
+            let nn6 = in6.value;
+            let nn7 = in7.value;
+            let nn8 = in8.value;
+            let nn9 = in9.value;
+            let nn10 = in10.value;
+            let nn11 = in11.value;
+            let nn12 = in12.value;
+            let nn13 = in13.value;
+            let nn14 = in14.value;
+            let nn15 = in15.value;
+            let nn16 = in16.value;
+            let nn17 = in17.value;
+            let nn18 = in18.value;
+            nn19 =(nn1 * 900) + (nn2 * 450) + (nn3 * 450) + (nn4 * 450) + (nn5 * 450) + (nn6 * 450) + (nn7 * 450) + ((nn8 * nn9) * 900) + ((nn10 * nn11) * 900) + ((nn12 * nn13) * 450) + ((nn14 * nn15) * 900) + (nn16 * 200) + (nn17 * 400) + (nn18 * 450);
+            nn20 = (nn1 * 1700) + (nn2 * 1300) + (nn3 * 1300) + (nn4 * 1300) + (nn5 * 1300) + (nn6 * 1300) + (nn7 * 1300) + ((nn8 * nn9) * 1700) + ((nn10 * nn11) * 1100) + ((nn12 * nn13) * 0) + ((nn14 * nn15) * 0) + (nn16 * 400) + (nn17 * 700) + (nn18 * 0);
+            if(nn19 > 1){
+                in19.value = nn19;
+                in20.value = Math.round(nn20);
+            }
+            else{
+                in19.value = '';
+                in20.value = '';
+            }
+        }
+        n13.onkeyup = function(){
+            let nn1 = in1.value;
+            let nn2 = in2.value;
+            let nn3 = in3.value;
+            let nn4 = in4.value;
+            let nn5 = in5.value;
+            let nn6 = in6.value;
+            let nn7 = in7.value;
+            let nn8 = in8.value;
+            let nn9 = in9.value;
+            let nn10 = in10.value;
+            let nn11 = in11.value;
+            let nn12 = in12.value;
+            let nn13 = in13.value;
+            let nn14 = in14.value;
+            let nn15 = in15.value;
+            let nn16 = in16.value;
+            let nn17 = in17.value;
+            let nn18 = in18.value;
+            nn19 =(nn1 * 900) + (nn2 * 450) + (nn3 * 450) + (nn4 * 450) + (nn5 * 450) + (nn6 * 450) + (nn7 * 450) + ((nn8 * nn9) * 900) + ((nn10 * nn11) * 900) + ((nn12 * nn13) * 450) + ((nn14 * nn15) * 900) + (nn16 * 200) + (nn17 * 400) + (nn18 * 450);
+            nn20 = (nn1 * 1700) + (nn2 * 1300) + (nn3 * 1300) + (nn4 * 1300) + (nn5 * 1300) + (nn6 * 1300) + (nn7 * 1300) + ((nn8 * nn9) * 1700) + ((nn10 * nn11) * 1100) + ((nn12 * nn13) * 0) + ((nn14 * nn15) * 0) + (nn16 * 400) + (nn17 * 700) + (nn18 * 0);
+            if(nn19 > 1){
+                in19.value = nn19;
+                in20.value = Math.round(nn20);
+            }
+            else{
+                in19.value = '';
+                in20.value = '';
+            }
+        }
+        n14.onkeyup = function(){
+            let nn1 = in1.value;
+            let nn2 = in2.value;
+            let nn3 = in3.value;
+            let nn4 = in4.value;
+            let nn5 = in5.value;
+            let nn6 = in6.value;
+            let nn7 = in7.value;
+            let nn8 = in8.value;
+            let nn9 = in9.value;
+            let nn10 = in10.value;
+            let nn11 = in11.value;
+            let nn12 = in12.value;
+            let nn13 = in13.value;
+            let nn14 = in14.value;
+            let nn15 = in15.value;
+            let nn16 = in16.value;
+            let nn17 = in17.value;
+            let nn18 = in18.value;
+            nn19 =(nn1 * 900) + (nn2 * 450) + (nn3 * 450) + (nn4 * 450) + (nn5 * 450) + (nn6 * 450) + (nn7 * 450) + ((nn8 * nn9) * 900) + ((nn10 * nn11) * 900) + ((nn12 * nn13) * 450) + ((nn14 * nn15) * 900) + (nn16 * 200) + (nn17 * 400) + (nn18 * 450);
+            nn20 = (nn1 * 1700) + (nn2 * 1300) + (nn3 * 1300) + (nn4 * 1300) + (nn5 * 1300) + (nn6 * 1300) + (nn7 * 1300) + ((nn8 * nn9) * 1700) + ((nn10 * nn11) * 1100) + ((nn12 * nn13) * 0) + ((nn14 * nn15) * 0) + (nn16 * 400) + (nn17 * 700) + (nn18 * 0);
+            if(nn19 > 1){
+                in19.value = nn19;
+                in20.value = Math.round(nn20);
+            }
+            else{
+                in19.value = '';
+                in20.value = '';
+            }
+        }
+        n15.onkeyup = function(){
+            let nn1 = in1.value;
+            let nn2 = in2.value;
+            let nn3 = in3.value;
+            let nn4 = in4.value;
+            let nn5 = in5.value;
+            let nn6 = in6.value;
+            let nn7 = in7.value;
+            let nn8 = in8.value;
+            let nn9 = in9.value;
+            let nn10 = in10.value;
+            let nn11 = in11.value;
+            let nn12 = in12.value;
+            let nn13 = in13.value;
+            let nn14 = in14.value;
+            let nn15 = in15.value;
+            let nn16 = in16.value;
+            let nn17 = in17.value;
+            let nn18 = in18.value;
+            nn19 =(nn1 * 900) + (nn2 * 450) + (nn3 * 450) + (nn4 * 450) + (nn5 * 450) + (nn6 * 450) + (nn7 * 450) + ((nn8 * nn9) * 900) + ((nn10 * nn11) * 900) + ((nn12 * nn13) * 450) + ((nn14 * nn15) * 900) + (nn16 * 200) + (nn17 * 400) + (nn18 * 450);
+            nn20 = (nn1 * 1700) + (nn2 * 1300) + (nn3 * 1300) + (nn4 * 1300) + (nn5 * 1300) + (nn6 * 1300) + (nn7 * 1300) + ((nn8 * nn9) * 1700) + ((nn10 * nn11) * 1100) + ((nn12 * nn13) * 0) + ((nn14 * nn15) * 0) + (nn16 * 400) + (nn17 * 700) + (nn18 * 0);
+            if(nn19 > 1){
+                in19.value = nn19;
+                in20.value = Math.round(nn20);
+            }
+            else{
+                in19.value = '';
+                in20.value = '';
+            }
+        }
+        n16.onkeyup = function(){
+            let nn1 = in1.value;
+            let nn2 = in2.value;
+            let nn3 = in3.value;
+            let nn4 = in4.value;
+            let nn5 = in5.value;
+            let nn6 = in6.value;
+            let nn7 = in7.value;
+            let nn8 = in8.value;
+            let nn9 = in9.value;
+            let nn10 = in10.value;
+            let nn11 = in11.value;
+            let nn12 = in12.value;
+            let nn13 = in13.value;
+            let nn14 = in14.value;
+            let nn15 = in15.value;
+            let nn16 = in16.value;
+            let nn17 = in17.value;
+            let nn18 = in18.value;
+            nn19 =(nn1 * 900) + (nn2 * 450) + (nn3 * 450) + (nn4 * 450) + (nn5 * 450) + (nn6 * 450) + (nn7 * 450) + ((nn8 * nn9) * 900) + ((nn10 * nn11) * 900) + ((nn12 * nn13) * 450) + ((nn14 * nn15) * 900) + (nn16 * 200) + (nn17 * 400) + (nn18 * 450);
+            nn20 = (nn1 * 1700) + (nn2 * 1300) + (nn3 * 1300) + (nn4 * 1300) + (nn5 * 1300) + (nn6 * 1300) + (nn7 * 1300) + ((nn8 * nn9) * 1700) + ((nn10 * nn11) * 1100) + ((nn12 * nn13) * 0) + ((nn14 * nn15) * 0) + (nn16 * 400) + (nn17 * 700) + (nn18 * 0);
+            if(nn19 > 1){
+                in19.value = nn19;
+                in20.value = Math.round(nn20);
+            }
+            else{
+                in19.value = '';
+                in20.value = '';
+            }
+        }
+        n17.onkeyup = function(){
+            let nn1 = in1.value;
+            let nn2 = in2.value;
+            let nn3 = in3.value;
+            let nn4 = in4.value;
+            let nn5 = in5.value;
+            let nn6 = in6.value;
+            let nn7 = in7.value;
+            let nn8 = in8.value;
+            let nn9 = in9.value;
+            let nn10 = in10.value;
+            let nn11 = in11.value;
+            let nn12 = in12.value;
+            let nn13 = in13.value;
+            let nn14 = in14.value;
+            let nn15 = in15.value;
+            let nn16 = in16.value;
+            let nn17 = in17.value;
+            let nn18 = in18.value;
+            nn19 =(nn1 * 900) + (nn2 * 450) + (nn3 * 450) + (nn4 * 450) + (nn5 * 450) + (nn6 * 450) + (nn7 * 450) + ((nn8 * nn9) * 900) + ((nn10 * nn11) * 900) + ((nn12 * nn13) * 450) + ((nn14 * nn15) * 900) + (nn16 * 200) + (nn17 * 400) + (nn18 * 450);
+            nn20 = (nn1 * 1700) + (nn2 * 1300) + (nn3 * 1300) + (nn4 * 1300) + (nn5 * 1300) + (nn6 * 1300) + (nn7 * 1300) + ((nn8 * nn9) * 1700) + ((nn10 * nn11) * 1100) + ((nn12 * nn13) * 0) + ((nn14 * nn15) * 0) + (nn16 * 400) + (nn17 * 700) + (nn18 * 0);
+            if(nn19 > 1){
+                in19.value = nn19;
+                in20.value = Math.round(nn20);
+            }
+            else{
+                in19.value = '';
+                in20.value = '';
+            }
+        }
+        n18.onkeyup = function(){
+            let nn1 = in1.value;
+            let nn2 = in2.value;
+            let nn3 = in3.value;
+            let nn4 = in4.value;
+            let nn5 = in5.value;
+            let nn6 = in6.value;
+            let nn7 = in7.value;
+            let nn8 = in8.value;
+            let nn9 = in9.value;
+            let nn10 = in10.value;
+            let nn11 = in11.value;
+            let nn12 = in12.value;
+            let nn13 = in13.value;
+            let nn14 = in14.value;
+            let nn15 = in15.value;
+            let nn16 = in16.value;
+            let nn17 = in17.value;
+            let nn18 = in18.value;
+            nn19 =(nn1 * 900) + (nn2 * 450) + (nn3 * 450) + (nn4 * 450) + (nn5 * 450) + (nn6 * 450) + (nn7 * 450) + ((nn8 * nn9) * 900) + ((nn10 * nn11) * 900) + ((nn12 * nn13) * 450) + ((nn14 * nn15) * 900) + (nn16 * 200) + (nn17 * 400) + (nn18 * 450);
+            nn20 = (nn1 * 1700) + (nn2 * 1300) + (nn3 * 1300) + (nn4 * 1300) + (nn5 * 1300) + (nn6 * 1300) + (nn7 * 1300) + ((nn8 * nn9) * 1700) + ((nn10 * nn11) * 1100) + ((nn12 * nn13) * 0) + ((nn14 * nn15) * 0) + (nn16 * 400) + (nn17 * 700) + (nn18 * 0);
+            if(nn19 > 1){
+                in19.value = nn19;
+                in20.value = Math.round(nn20);
+            }
+            else{
+                in19.value = '';
+                in20.value = '';
+            }
+        }
+    </script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</body>
+
+</html>
