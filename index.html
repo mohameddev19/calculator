@@ -1,0 +1,167 @@
+<!DOCTYPE >
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>home</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="icon" href="">
+</head>
+
+<body>
+    <div class="head row">
+        <h2>حاسبة تكليف</h2>
+        <h6>اخر تحديث بتاريخ 2020/7/1</h6>
+    </div>
+    <div class="row align-items-center">
+        <div id="time" class="num col-12 col-md-6 col-lg-4"><div class="numb"><label>مدة التسليم بالايام</label><input id="itime" type="text"></div></div>
+        <div id="ma" class="num col-12 col-md-6 col-lg-4"><div class="numb"><label>ملحق علوي</label><input id="ima" type="text"></div></div>
+        <div id="r" class="num col-12 col-md-6 col-lg-4"><div class="numb"><label>ارضي</label><input id="ir" type="text"></div></div>
+        <div id="mr" class="num col-12 col-md-6 col-lg-4"><div class="numb"><label>ملحق ارضي</label><input id="imr" type="text"></div></div>
+        <div id="sk" class="num col-12 col-md-6 col-lg-4"><div class="numb"><label>السور الخارجي</label><input id="isk" type="text"></div></div>
+        <div id="sa" class="num col-12 col-md-6 col-lg-4"><div class="numb"><label>السور العلوي</label><input id="isa" type="text"></div></div>
+        <div id="fm" class="num col-12 col-md-6 col-lg-4"><div class="numb n2"><label>التكلفة الاولية</label><input id="ifm" type="text" maxlength="0"></div></div>
+        <div id="sm" class="num col-12 col-md-6 col-lg-4"><div class="numb n2"><label>التكلفة على المفتاح</label><input id="ism" type="text" maxlength="0"></div></div>
+    </div>
+
+    <script>
+        const time = document.getElementById("time");
+        const ma = document.getElementById("ma");
+        const r = document.getElementById("r");
+        const mr = document.getElementById("mr");
+        const sk = document.getElementById("sk");
+        const sa = document.getElementById("sa");
+        const fm = document.getElementById("fm");
+        const sm = document.getElementById("sm");
+        const itime = document.getElementById("itime");
+        const ima = document.getElementById("ima");
+        const ir = document.getElementById("ir");
+        const imr = document.getElementById("imr");
+        const isk = document.getElementById("isk");
+        const isa = document.getElementById("isa");
+        const ifm = document.getElementById("ifm");
+        const ism = document.getElementById("ism");
+        let time2 = 0;
+        let ma2 = 0;
+        let r2 = 0;
+        let mr2 = 0;
+        let sk2 = 0;
+        let sa2 = 0;
+        let fm2 = 0;
+        let sm2 = 0;
+        time.onkeyup = function(){
+            time2 = itime.value;
+            ma2 = ima.value;
+            r2 = ir.value;
+            mr2 = imr.value;
+            sk2 = isk.value;
+            sa2 = isa.value;
+            fm2 = (time2 / (time2 * time2)) * ((ma2 * 210) + (r2 * 120) + (mr2 * 200) + (sk2 * 110) + (sa2 * 120));
+            sm2 = fm2 * 1.5;
+            if(fm2 > 1){
+                ifm.value = fm2;
+                ism.value = sm2;
+            }
+            else{
+                ifm.value = '';
+                ism.value = '';
+            }
+        }
+        ma.onkeyup = function(){
+            time2 = itime.value;
+            ma2 = ima.value;
+            r2 = ir.value;
+            mr2 = imr.value;
+            sk2 = isk.value;
+            sa2 = isa.value;
+            fm2 = (time2 / (time2 * time2)) * ((ma2 * 210) + (r2 * 120) + (mr2 * 200) + (sk2 * 110) + (sa2 * 120));
+            sm2 = fm2 * 1.5;
+            if(fm2 > 1){
+                ifm.value = fm2;
+                ism.value = sm2;
+            }
+            else{
+                ifm.value = '';
+                ism.value = '';
+            }
+        }
+        r.onkeyup = function(){
+            time2 = itime.value;
+            ma2 = ima.value;
+            r2 = ir.value;
+            mr2 = imr.value;
+            sk2 = isk.value;
+            sa2 = isa.value;
+            fm2 = (time2 / (time2 * time2)) * ((ma2 * 210) + (r2 * 120) + (mr2 * 200) + (sk2 * 110) + (sa2 * 120));
+            sm2 = fm2 * 1.5;
+            if(fm2 > 1){
+                ifm.value = fm2;
+                ism.value = sm2;
+            }
+            else{
+                ifm.value = '';
+                ism.value = '';
+            }
+        }
+        mr.onkeyup = function(){
+            time2 = itime.value;
+            ma2 = ima.value;
+            r2 = ir.value;
+            mr2 = imr.value;
+            sk2 = isk.value;
+            sa2 = isa.value;
+            fm2 = (time2 / (time2 * time2)) * ((ma2 * 210) + (r2 * 120) + (mr2 * 200) + (sk2 * 110) + (sa2 * 120));
+            sm2 = fm2 * 1.5;
+            if(fm2 > 1){
+                ifm.value = fm2;
+                ism.value = sm2;
+            }
+            else{
+                ifm.value = '';
+                ism.value = '';
+            }
+        }
+        sk.onkeyup = function(){
+            time2 = itime.value;
+            ma2 = ima.value;
+            r2 = ir.value;
+            mr2 = imr.value;
+            sk2 = isk.value;
+            sa2 = isa.value;
+            fm2 = (time2 / (time2 * time2)) * ((ma2 * 210) + (r2 * 120) + (mr2 * 200) + (sk2 * 110) + (sa2 * 120));
+            sm2 = fm2 * 1.5;
+            if(fm2 > 1){
+                ifm.value = fm2;
+                ism.value = sm2;
+            }
+            else{
+                ifm.value = '';
+                ism.value = '';
+            }
+        }
+        sa.onkeyup = function(){
+            time2 = itime.value;
+            ma2 = ima.value;
+            r2 = ir.value;
+            mr2 = imr.value;
+            sk2 = isk.value;
+            sa2 = isa.value;
+            fm2 = (time2 / (time2 * time2)) * ((ma2 * 210) + (r2 * 120) + (mr2 * 200) + (sk2 * 110) + (sa2 * 120));
+            sm2 = fm2 * 1.5;
+            if(fm2 > 1){
+                ifm.value = fm2;
+                ism.value = sm2;
+            }
+            else{
+                ifm.value = '';
+                ism.value = '';
+            }
+        }
+    </script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</body>
+
+</html>
