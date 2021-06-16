@@ -37,11 +37,11 @@ body{
     justify-content: center;
     align-items: center;
 }
-.n2 label{
+.nb2 label{
     background-color: #10c068;
     border: solid 3px #10c068;
 }
-.n2 input{
+.nb2 input{
     border: solid 2px #10c068;
     color: #10c068;
 }
@@ -64,4 +64,9 @@ input{
     text-align: center;
     color: #1053c0;
     font-weight: 500;
+}
+@media screen and (min-width: 425px) {
+    label{
+        font-size: 25px !important;
+    }
 }
